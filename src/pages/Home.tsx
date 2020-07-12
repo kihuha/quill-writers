@@ -6,7 +6,11 @@ import { Mail, Phone } from "react-feather"
 
 import Navbar from "../components/navbar"
 import { CardWrapper, Card, CardImg, CardFilter, CardTitle } from "../components/card"
-import { primary, light } from "../design/colors"
+import Footer from "../components/footer"
+
+import { primary } from "../design/colors"
+import { size } from "../design/typography"
+
 import Hero from "../assets/Hero.svg"
 import ImageOne from "../assets/image1.jpg"
 import ImageTwo from "../assets/image2.jpg"
@@ -18,6 +22,11 @@ const Section = styled.section`
 
   &:not(:last-child) {
     margin-bottom: 2rem;
+  }
+
+  @media (min-width: 950px) {
+    max-width: 1200px;
+    margin: 0 auto;
   }
 `
 
@@ -31,17 +40,51 @@ const Landing = styled(Section)`
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
+
+  @media (min-width: 950px) {
+    flex-direction: row;
+  }
 `
 
 const LandingHero = styled.img`
   width: 100%;
+
+  @media (min-width: 600px) {
+    width: 75%;
+  }
+
+  @media (min-width: 768px) {
+    width: 55%;
+  }
+
+  @media (min-width: 950px) {
+    width: 50%;
+    margin-right: 2rem;
+  }
 `
 const LandingContent = styled.div`
   margin-bottom: 2.5rem;
+
+  @media (min-width: 600px) {
+    width: 75%;
+  }
+
+  @media (min-width: 950px) {
+    width: 50%;
+  }
 `
 
 const LandingTitle = styled(SectionTitle)`
   min-height: 141px;
+
+  @media (min-width: 600px) {
+    min-height: 100px;
+  }
+
+  @media (min-width: 950px) {
+    font-size: ${size.level3};
+    min-height: 400px;
+  }
 `
 
 const LandingParagraph = styled.p`
@@ -52,11 +95,7 @@ const LandingTyped = styled.span`
   color: ${primary[100]};
 `
 
-const ContactSection = styled(Section)`
-  background: ${primary[100]};
-  color: ${light[100]};
-  padding-bottom: 2rem;
-`
+const ContactSection = styled(Section)``
 
 const ContactDetail = styled.div`
   display: flex;
@@ -125,17 +164,19 @@ const Home = (props: RouteComponentProps): JSX.Element => {
           </Card>
         </CardWrapper>
       </Section>
-      <ContactSection>
-        <SectionTitle>Contact</SectionTitle>
-        <div className="div">
-          <ContactDetail>
-            <Mail /> <span>quillwriters@info.com</span>
-          </ContactDetail>
-          <ContactDetail>
-            <Phone /> <span>+254 717 123 456</span>
-          </ContactDetail>
-        </div>
-      </ContactSection>
+      <Footer>
+        <ContactSection>
+          <SectionTitle>Contact</SectionTitle>
+          <div className="div">
+            <ContactDetail>
+              <Mail /> <span>quillwriters@info.com</span>
+            </ContactDetail>
+            <ContactDetail>
+              <Phone /> <span>+254 717 123 456</span>
+            </ContactDetail>
+          </div>
+        </ContactSection>
+      </Footer>
     </Fragment>
   )
 }

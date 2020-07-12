@@ -6,6 +6,15 @@ const CardWrapper = styled.div`
   grid-template-columns: 100%;
   row-gap: 1rem;
   width: 100%;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 50% 50%;
+    gap: 0.5rem;
+  }
+
+  @media (min-width: 950px) {
+    gap: 1.5rem;
+  }
 `
 
 const Card = styled.div`

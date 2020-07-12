@@ -42,6 +42,6 @@
     "lint": "eslint src/**/* src/**/**/* --quiet",
     "format": "prettier src/**/* src/**/**/* --write",
     "build": "parcel build src/index.html && parcel build server/server.ts --target node ",
-    "start": "yarn build && node dist/server.js"
+    "start": "node dist/server.js"
   }
 }

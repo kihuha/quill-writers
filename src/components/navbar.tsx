@@ -10,6 +10,11 @@ const NavbarWrapper = styled.nav`
   border-bottom: solid 2px ${dark[20]};
   margin-bottom: 4rem;
   padding: 0 10px;
+
+  @media (min-width: 950px) {
+    max-width: 1200px;
+    margin: 0 auto 2rem auto;
+  }
 `
 
 const NavbarLogo = styled.h1`
